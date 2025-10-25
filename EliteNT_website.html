@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteNT | High-Purity Non-Flaking Carbon Nanotubes for OEMs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F7F7;
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 4rem;
+            }
+        }
+        .shadow-turquoise {
+            box-shadow: 0 10px 15px -3px rgba(64, 224, 208, 0.5), 0 4px 6px -2px rgba(64, 224, 208, 0.05);
+        }
+        .btn-primary {
+            background-color: #40E0D0; /* Vibrant Turquoise */
+            color: #004c4c;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #008080; /* Dark Teal Hover */
+            color: #FFFFFF;
+        }
+        .svg-color {
+            fill: #40E0D0;
+        }
+
+        /* --- HEXAGON RIPPLE STYLES START --- */
+        .hexagon-grid-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hexagon-tile {
+            position: absolute;
+            width: 100px; /* Base width of the hexagon container */
+            height: 115.47px; /* Hexagon Height (Width * sqrt(3)/2) */
+            cursor: pointer;
+            transition: opacity 0.5s ease-out, transform 0.2s ease-out;
+            opacity: 0.02; /* Default subtle opacity */
+        }
+
+        .hexagon-inner {
+            width: 100%;
+            height: 100%;
+            background-color: #40E0D0; /* Turquoise color */
+            /* CSS property to define the hexagon shape */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .hexagon-tile.active {
+            opacity: 0.3; /* Brightest ripple effect */
+        }
+        /* --- HEXAGON RIPPLE STYLES END --- */
+
+        /* --- MARQUEE STYLES START --- */
+        @keyframes scroll-left-to-right {
+            0% {
+                transform: translateX(-50%); 
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+        }
+
+        .marquee-content {
+            width: 200%;
+            display: flex;
+            animation: scroll-left-to-right 20s linear infinite;
+        }
+        
+        .image-set {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            flex-shrink: 0;
+        }
+        /* --- MARQUEE STYLES END --- */
+ 
+
+ </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- ADDED items-center to vertically center everything in the header -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#hero" class="flex items-center space-x-3">
+                <!-- EliteNT Logo SVG (Embedded) -->
+                <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="#008080" />
+                    <g fill="none" stroke-width="4">
+                        <path d="M 50 10 L 85 30 L 85 70 L 50 90 L 15 70 L 15 30 Z" stroke="#40E0D0" class="stroke-current" />
+                        <path d="M 50 25 L 70 37 L 70 63 L 50 75 L 30 63 L 30 37 Z" stroke="#A0AEC0" class="stroke-current" />
+                    </g>
+                    <!--path d="M 35 65 L 75 25" fill="none" stroke="#F6AD55" stroke-width="6" stroke-linecap="round"/-->
+                </svg>
+                <span class="text-2xl font-extrabold text-[#008080]">EliteNT</span>
+            </a>
+            <nav class="space-x-4 hidden md:flex items-center">
+                <!-- Added translate-y-[1px] to slightly shift text down for perfect visual alignment -->
+                <a href="#value" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Advantages</a>
+                <a href="#product" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Products</a>
+				<a href="#partners" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Partners</a>
+                <a href="#applications" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Applications</a>
+                <!-- NEW TEAM LINK ADDED -->
+                <a href="#team" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Team</a>
+                <a href="#quote" class="btn-primary transition-all duration-300 transform hover:scale-105">Request Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="bg-gray-100 section-padding pb-0 pt-20 md:pt-32 relative overflow-hidden">
+        <!-- Hexagon Ripple Background Container (NEW) -->
+        <div id="hexagon-grid" class="hexagon-grid-container bg-gray-900">
+            <!-- Hexagon tiles will be generated here by JavaScript -->
+        </div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
+                Ultra-Long <span class="text-[#40E0D0]">Carbon Nanotubes</span> for Mission-Critical OEMs
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                High Performance Carbon Nanotubes Sheets and Fibres for OEMs.
+            </p>
+            <a href="#quote" class="btn-primary shadow-lg shadow-[#40E0D0]/50 inline-block">
+                Request Technical Specification & Quote
+            </a>
+            <!-- ADDED: New container to constrain the image grid width -->
+            <div class="max-w-5xl mx-auto"> 
+                <!-- Original Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mt-12 mb-0 h-60">
+                    
+                    <!-- Image 1: Material Detail (High-Resolution View) -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                        <img src="C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\Bundle of CNTs_JT - Copy1.png" 
+                             alt="EliteNT carbon nanotube composite material detailed view" 
+                             class="w-full h-auto object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/008080/ffffff?text=MATERIAL+DETAIL+UNAVAILABLE';"
+                        >
+                        <!--p class="text-sm text-gray-500 p-3">Structural integrity proof (placeholder for SEM image).</p-->
+                    </div>
+
+                    <!-- Image 2: Production Site Proof (Capacity & Scale) -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                        <img src="https://placehold.co/600x400/004c4c/ffffff?text=ELITENT+CAMBRIDGE+PRODUCTION+SITE+%28PILOT%29" 
+                             alt="EliteNT Advanced Pilot Production Facility, Cambridge" 
+                             class="w-full h-auto object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/004c4c/ffffff?text=PRODUCTION+SITE+UNAVAILABLE';"
+                        >
+                        <p class="text-sm text-gray-500 p-3">Tier-1 scalable production capacity proof (placeholder for facility photo).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Marquee Ticker Section (Now placed before Team/Quote) -->
+    <section id="ticker" class="py-12 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-6 text-[#008080]">Our Partners</h2>
+
+            <!-- MARQUEE CONTENT -->
+            <!-- Adjusted styling to be simpler and use standard teal/gray colors -->
+            <div class="marquee-container border-y-2 border-gray-300 bg-white">
+                <div class="marquee-content">
+                    
+                    <!-- CONTENT SET 1 (Original) -->
+                    <div class="image-set p-3">
+                        <!-- Image 1: Dexmat -->
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src="C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\Dexmat_logo.png" 
+                                alt="DEXMAT placeholder"
+                                class="rounded-lg shadow-xl object-cover w-50 h-30 max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                        <!-- Image 2: Kafitt group -->	
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src= "C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\Kafritgrp_logo.png"
+                                alt="Kafitt group"
+                                class="rounded-lg shadow-xl object-cover w-50 h-30 max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                        <!-- Image 3: University of Cambridge -->
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src="C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\university-of-cambridge-logo-black-and-white.png" 
+                                alt="UoC placeholder"
+                                class="rounded-lg shadow-xl object-cover w-full h-auto max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- CONTENT SET 2 (Duplicate for Seamless Loop) -->
+                    <div class="image-set p-3">
+                        <!-- Image 1 Duplicate: Aerospace -->
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src="C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\Dexmat_logo.png" 
+                                alt="DEXMAT placeholder"
+                                class="rounded-lg shadow-xl object-cover w-50 h-auto max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                        <!-- Image 2 Duplicate: EV Battery -->
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src= "C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\Kafritgrp_logo.png"
+                                alt="Kafitt group"
+                                class="rounded-lg shadow-xl object-cover w-50 h-auto max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                        <!-- Image 3 Duplicate: Electronics -->
+                        <div class="w-1/3 p-2 flex justify-center">
+                            <img 
+                                src="C:\Users\mwjg2\Documents\QFLO\NEWCO\Website and Logo\partner_logos\university-of-cambridge-logo-black-and-white.png" 
+                                alt="UoC placeholder"
+                                class="rounded-lg shadow-xl object-cover w-full h-auto max-w-xs transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END MARQUEE CONTENT -->
+        </div>
+    </section>
+
+    <!-- 2. Value Proposition / USP Section -->
+    <section id="value" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">EliteNT Differentiators</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+			
+                <!-- USP 1: Non-Flaking Purity -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Ultra-Long CNTs</div>
+                    <!-- CHANGED from "100mum" back to "100µm" -->
+                    <h3 class="text-xl font-semibold">High-quality CNT mats, fibres and pulp</h3>
+                    <p class="text-gray-600 text-sm">Our expertise in carbon nanotube synthesis guarantees a product with individual CNTs > 100µm in length, eliminating the risk of particulate shedding and promoting safety in mission-critical components.</p>
+                </div>
+                <!-- USP 2: Sustainable Sourcing -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Net-Zero Feedstock</div>
+                    <h3 class="text-xl font-semibold">Turquoise Hydrogen Co-Production</h3>
+                    <p class="text-gray-600 text-sm">We utilize methane pyrolysis, yielding high-purity CNTs and co-producing clean, CO2 free hydrogen. This reduces your Scope 3 emissions and supports verified sustainability goals.</p>
+                </div>
+                <!-- USP 3: Supply Chain Assurance -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Tier-1 Scalability</div>
+                    <h3 class="text-xl font-semibold">Large-volumes available, Consistent Supply</h3>
+                    <p class="text-gray-600 text-sm">Our patented process creates high volume, consistent supplies. We ensure stable, long-term supplies are available for risk-free long-cycle OEM contracts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- 2.a. Partners -->
+    <section id="value" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">EliteNT Differentiators</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- USP 1: Non-Flaking Purity -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Ultra-Long CNTs</div>
+                    <!-- CHANGED from "100mum" back to "100µm" -->
+                    <h3 class="text-xl font-semibold">High-quality CNT mats, fibres and pulp</h3>
+                    <p class="text-gray-600 text-sm">Our expertise in synthesis guarantees a structurally Elite product with individual CNTs > 100µm in length, eliminating the risk of particulate shedding and promoting safety in mission-critical components.</p>
+                </div>
+                <!-- USP 2: Sustainable Sourcing -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Net-Zero Feedstock</div>
+                    <h3 class="text-xl font-semibold">Turquoise Hydrogen Co-Production</h3>
+                    <p class="text-gray-600 text-sm">We utilize methane pyrolysis, yielding high-purity CNTs and co-producing clean, CO2 free hydrogen. This reduces your Scope 3 emissions and supports verified sustainability goals.</p>
+                </div>
+                <!-- USP 3: Supply Chain Assurance -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                    <div class="text-3xl text-[#40E0D0] font-extrabold">Tier-1 Scalability</div>
+                    <h3 class="text-xl font-semibold">Large-volumes available, Consistent Supply</h3>
+                    <p class="text-gray-600 text-sm">Leveraging our advanced pilot plant capacity, we ensure stable, long-term supply volumes perfect for risk-free long-cycle OEM contracts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 3. Product Data Section (EliteNT-1 Grade) -->
+    <section id="product" class="section-padding bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#008080] pb-2 max-w-xl mx-auto">EliteNT-1 Grade: High Volume & Conductivity</h2>
+
+            <!-- EliteNT_1 Grade Table -->
+            <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-[#008080] text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Metric</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Specification (EliteNT_1)</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Application Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold">Purity</td>
+                            <td class="px-6 py-4 text-[#008080] font-bold"> > 90% Carbon Basis</td>
+                            <td class="px-6 py-4 text-sm">Meets stringent semiconductor/aerospace component standards; eliminates residual catalyst risk.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 bg-gray-50">
+                            <td class="px-6 py-4 font-semibold">Electrical Conductivity</td>
+                            <td class="px-6 py-4 text-[#008080] font-bold">x10 superior performance compared to graphite based batteries</td>
+                            <td class="px-6 py-4 text-sm">Superior charge transfer for Li-ion battery electrodes and high-efficiency EMI shielding.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold">Average Diameter</td>
+                            <td class="px-6 py-4 text-[#008080] font-bold">2 – 7 nm</td>
+                            <td class="px-6 py-4 text-sm">Optimized aspect ratio for CNT enhancement, perfect in polymer matrices and high tensile strength.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Transparency and Supply Assurance Section -->
+            <div class="mt-12 bg-white p-6 rounded-xl shadow-inner border border-gray-200">
+                <h3 class="text-xl font-bold text-[#008080] mb-3">Supply Chain Assurance & Transparency</h3>
+                <p class="text-gray-600 text-sm">EliteNT ensures reliability through transparent supply chain metrics:</p>
+                <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
+                    <li> Material produced exclusively via FC-CVD using co-produced clean H2 feedstock from our certified Cambridge facility.</li>
+                    <li>Secure long-term volumes (0.5 - 1 ton/year, in 12-24 months) via RFQ to lock in price and orders.</li>
+                    <li>All shipments come with a certificate of analysis detailing Lot-to-Lot variance, ensured to be less than 5%.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Applications Section -->
+    <section id="applications" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">Mission-Critical Applications</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Application 1: EV Batteries -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
+                        <!--svg class="svg-color w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M11 20H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h7V2l4 3-4 3V6H4v12h7v2zm9-6h-3.25c-.41 0-.75.34-.75.75v1.5c0 .41.34.75.75.75H20c1.1 0 2-.9 2-2v-1c0-.55-.45-1-1-1zm1-8v1h-9v12h11v-12c0-.55-.45-1-1-1zm-1 8h-3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2z"/></svg-->
+                        Automotive / EV Energy Storage
+                    </h3>
+                    <p class="text-gray-600">Our EliteNT_1 enhances Li-ion battery performance by creating a highly efficient conductive network. This stabilizes the silicon anode during volume expansion, directly increasing energy-density and cycle life.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>Stabilizes Silicon Anodes improving performance by x 10.</li>
+                        <li>Improves Charge/Discharge Rates.</li>
+                        <li>Reduces thermal runaway risk through superior heat dissipation.</li>
+                    </ul>
+                </div>
+
+                <!-- Application 2: Aerospace/Defense -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
+                        <!--svg class="svg-color w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg-->
+                        Aerospace Composites
+                    </h3>
+                    <p class="text-gray-600">The non-flaking nature of our CNTs is essential for lightweight composite structures and EMI shielding in high-altitude/vacuum environments, where material integrity is of utmost importance.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>Eliminates particulate shedding/contamination risk.</li>
+                        <li>9x weight reduction over traditional copper based products.</li>
+                        <li>Superior mechanical strength and thermal transfer in critical airframes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NEW: 5. Team Section -->
+    <section id="team" class="section-padding bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 border-b-2 border-[#008080] pb-2 max-w-xs mx-auto">Meet the Team</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">EliteNT is powered by a core team of material scientists and chemical engineers dedicated to scalable, clean carbon technology.</p>
+            
+            <div class="grid md:grid-cols-2 gap-20">
+                <!-- Team Member 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
+                    <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Dr.G" alt="Dr. Michael Glerum">
+                    <h3 class="text-xl font-bold text-[#008080]">Dr. Michael Glerum</h3>
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Chief Executive Officer (CEO)</p>
+                    <p class="text-xs text-gray-500">Expert in floating catalyst chemical vapor deposition (FC-CVD) and ultra-long CNT synthesis.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
+                    <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Mr.P" alt="Mr. Sam Pick">
+                    <h3 class="text-xl font-bold text-[#008080]">Mr. Sam Pick</h3>
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Chief Operations Officer (COO)</p>
+                    <p class="text-xs text-gray-500">Operational lead on pilot plant delivery.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
+                    <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Dr.Y" alt="Dr. Yeshurun">
+                    <h3 class="text-xl font-bold text-[#008080]">Dr. Shuki Yeshurun</h3>
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Chief Client Officer</p>
+                    <p class="text-xs text-gray-500">Manages OEM partnerships and ensures supply chain integrity for high-volume contracts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Request For Quote (RFQ) CTA Form -->
+    <section id="quote" class="section-padding bg-[#004c4c] text-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 text-[#40E0D0]">Ready to Integrate EliteNT?</h2>
+            <p class="text-center text-gray-200 mb-10">Connect directly with our engineering team for custom material grades, volume pricing, and supply assurance.</p>
+
+            <form class="space-y-6 bg-white p-8 rounded-xl shadow-turquoise text-gray-800">
+                <h3 class="text-2xl font-semibold mb-4">Request a Technical Quote (RFQ)</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 border focus:border-[#40E0D0] focus:ring focus:ring-[#40E0D0] focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700">Company (OEM/Supplier)</label>
+                        <input type="text" id="company" name="company" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 border focus:border-[#40E0D0] focus:ring focus:ring-[#40E0D0] focus:ring-opacity-50">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Work Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 border focus:border-[#40E0D0] focus:ring focus:ring-[#40E0D0] focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="volume" class="block text-sm font-medium text-gray-700">Estimated Annual Volume (Tons)</label>
+                        <select id="volume" name="volume" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 border focus:border-[#40E0D0] focus:ring focus:ring-[#40E0D0] focus:ring-opacity-50">
+                            <option value="">Select range...</option>
+                            <option value="pilot">Research grade (1 - 10g)</option>
+                            <option value="low">Samples (100g - 1 kg)</option>
+                            <option value="medium">Medium Volume (50 - 100 kg)</option>
+                            <option value="high">Bulk (100+ kg)</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Project Focus / Technical Requirements</label>
+                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 border focus:border-[#40E0D0] focus:ring focus:ring-[#40E0D0] focus:ring-opacity-50"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-primary w-full md:w-auto transition-all duration-300 transform hover:scale-105">
+                        Submit RFQ & Schedule Technical Briefing
+                    </button>
+                </div>
+                <p class="text-xs text-center text-gray-500 mt-4">All data is used exclusively to qualify your project. We respect your technical confidentiality.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+            &copy; 2025 EliteNT Advanced Materials. All Rights Reserved. | <a href="#" class="text-[#40E0D0] hover:underline">Technical Support</a> | <a href="#" class="text-[#40E0D0] hover:underline">Patents & IP</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Hexagon Generation and Ripple Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.getElementById('hexagon-grid');
+            if (!gridContainer) return;
+
+            const hexWidth = 100;
+            const hexHeight = 115.47; // 100 * sqrt(3) / 2
+            const rowSpacing = hexHeight * 0.75;
+            const colSpacing = hexWidth;
+            const hexRadius = hexWidth / 2;
+
+            let tiles = [];
+
+            // Function to generate the hexagonal grid layout
+            function generateGrid() {
+                const containerRect = gridContainer.getBoundingClientRect();
+                const containerWidth = containerRect.width;
+                const containerHeight = containerRect.height;
+                
+                // Clear existing tiles
+                gridContainer.innerHTML = '';
+                tiles = [];
+
+                let row = 0;
+                let currentY = -hexHeight / 2;
+
+                // Loop through rows
+                while (currentY < containerHeight) {
+                    let col = 0;
+                    let currentX = (row % 2 === 0) ? -hexRadius : 0; // Offset every other row
+                    
+                    // Loop through columns
+                    while (currentX < containerWidth) {
+                        const tile = document.createElement('div');
+                        tile.classList.add('hexagon-tile');
+                        tile.style.width = `${hexWidth}px`;
+                        tile.style.height = `${hexHeight}px`;
+                        tile.style.left = `${currentX}px`;
+                        tile.style.top = `${currentY}px`;
+                        tile.style.transform = `scale(1.02)`; // To ensure edges meet seamlessly
+                        
+                        // Store grid coordinates (for distance calculation)
+                        tile.dataset.gridX = currentX + hexRadius;
+                        tile.dataset.gridY = currentY + hexHeight / 2;
+
+                        const inner = document.createElement('div');
+                        inner.classList.add('hexagon-inner');
+                        tile.appendChild(inner);
+
+                        gridContainer.appendChild(tile);
+                        tiles.push(tile);
+
+                        currentX += colSpacing * 0.75; // Adjust step for tight packing
+                        col++;
+                    }
+                    currentY += rowSpacing;
+                    row++;
+                }
+            }
+            
+            // Initial grid generation
+            generateGrid();
+
+            // Recalculate grid on resize to keep it covering the container
+            window.addEventListener('resize', generateGrid);
+
+            // --- Ripple Effect Logic ---
+
+            const maxDistance = 300; // Max distance for the ripple effect (in pixels)
+            const rippleDuration = 1000; // How long the ripple effect fades (in ms)
+
+            function handleInteraction(e) {
+                // Get the coordinates relative to the grid container
+                const rect = gridContainer.getBoundingClientRect();
+                let clientX, clientY;
+
+                if (e.touches && e.touches.length > 0) {
+                    // Handle touch event
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                } else {
+                    // Handle mouse event
+                    clientX = e.clientX;
+                    clientY = e.clientY;
+                }
+                
+                const eventX = clientX - rect.left;
+                const eventY = clientY - rect.top;
+
+                tiles.forEach(tile => {
+                    const tileX = parseFloat(tile.dataset.gridX);
+                    const tileY = parseFloat(tile.dataset.gridY);
+                    
+                    // Calculate distance from interaction point to the center of the hexagon
+                    const dx = eventX - tileX;
+                    const dy = eventY - tileY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        // Normalize distance (0=closest, 1=farthest)
+                        const normalizedDistance = distance / maxDistance;
+                        
+                        // Calculate opacity based on normalized distance (closer = brighter)
+                        // Use a power function to make the drop-off more dramatic
+                        const opacity = 0.3 * (1 - Math.pow(normalizedDistance, 2));
+
+                        // Apply the calculated opacity to the hexagon
+                        tile.style.opacity = Math.max(0.02, opacity); // Ensure minimum base opacity
+                        
+                        // Clear previous fade-out timeout if it exists
+                        clearTimeout(tile.fadeTimeout);
+
+                        // Set a timeout to fade back to default opacity
+                        tile.fadeTimeout = setTimeout(() => {
+                            tile.style.opacity = 0.02;
+                        }, rippleDuration);
+                    }
+                });
+            }
+
+            // Attach event listeners for mouse and touch interactions
+            gridContainer.addEventListener('mousemove', handleInteraction);
+            gridContainer.addEventListener('touchmove', handleInteraction);
+        });
+    </script>
+</body>
+</html>
