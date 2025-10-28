@@ -40,47 +40,41 @@
         .svg-color {
             fill: #40E0D0;
         }
-				/* --- Custom Scrollbar Styles --- */
-        
         /* --- Scroll-Spy Navigation Styles --- */
-		#scroll-spy-nav .nav-dot {
-		display: block;
-		width: 12px;
-		height: 12px;
-		background-color: #A0AEC0; /* Muted gray color */
-		border-radius: 50%;
-		transition: all 0.3s ease;
-		cursor: pointer;
-		}
-
-		#scroll-spy-nav .nav-dot:hover {
-			background-color: #008080; /* Dark Teal on hover */
-		}
-
-		#scroll-spy-nav .nav-dot.active {
-			background-color: #40E0D0; /* Vibrant Turquoise for active section */
-			transform: scale(1.4); /* Make the active dot bigger */
-			border: 2px solid white;
-			box-shadow: 0 0 10px rgba(64, 224, 208, 0.7);
-		}
+        #scroll-spy-nav .nav-dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: #A0AEC0; /* Muted gray color */
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        #scroll-spy-nav .nav-dot:hover {
+            background-color: #008080; /* Dark Teal on hover */
+        }
+        #scroll-spy-nav .nav-dot.active {
+            background-color: #40E0D0; /* Vibrant Turquoise for active section */
+            transform: scale(1.4); /* Make the active dot bigger */
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(64, 224, 208, 0.7);
+        }
         /* Adjust hero section to ensure content is above particles and has height */
         #hero {
-			
-		    background-image: url("webimages/Website Bundles1.png"); /* Corrected: Relative path */
+            background-image: url("webimages/Website Bundles1.png"); /* Corrected: Relative path */
             background-size: cover;
             background-position: center;
-			min-height: 100vh;
-			display: flex;
-			padding-top: 0;
-			padding-bottom: 0;
+            min-height: 100vh;
+            display: flex;
+            padding-top: 0;
+            padding-bottom: 0;
             position: relative; /* Needed for the overlay to be positioned correctly */
             z-index: 1; /* Ensure overlay is above background but below content */
             color: #FFFFFF; /* Default text color for this section set to white */
         }
-		.hero-content {
-			text-align: left;
-		}
-		        
+        .hero-content {
+            text-align: left;
+        }
         /* --- Particle Background Container Styles --- */
         #particles-js {
             position: absolute; /* Position relative to its parent (#hero) */
@@ -93,63 +87,57 @@
             top: 0;
             left: 0;
         }
-
         /* Ensure all direct children of #hero are positioned relatively or absolutely
            to respect the z-index, especially the content wrapper. */
         #hero > .max-w-7xl {
             position: relative;
             z-index: 10; /* Ensure text and images are above the particle background */
             margin-top: 1rem;
-        }       
-
-		/*Position hero text to the left*/
-
-
-       /* --- MARQUEE STYLES --- */
+        }
+        /* --- MARQUEE STYLES --- */
         @keyframes scroll-left-to-right {
             0% {
-                transform: translateX(-50%); 
+                transform: translateX(-50%);
             }
             100% {
                 transform: translateX(0%);
             }
         }
-
         .marquee-container {
             overflow: hidden;
         }
-
         .marquee-content {
             width: 200%;
             display: flex;
             animation: scroll-left-to-right 20s linear infinite;
         }
-        
         .image-set {
-            width: 50%;
+            width: 100%;
             display: flex;
             justify-content: space-around;
             flex-shrink: 0;
             align-items: center; /* Vertically align images */
         }
         .image-set img {
-            max-height: 80px; /* Limit height for consistency in marquee */
+            max-height: 50px; /* Limit height for consistency in marquee */
             width: auto; /* Maintain aspect ratio */
         }
+        .table_wrapper { /* Added class name for clarity */
+            overflow-x: auto;
+            width: 100%;
+        }
         /* --- MARQUEE STYLES END --- */
- 
         /* --- STYLES for #value section background image --- */
         #value {
             background-image: url("webimages/PBCNTsamplecropped.png"); /* Corrected: Relative path */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Optional: for parallax effect */
-			min-height: 100vh;
+            min-height: 100vh;
             position: relative; /* Needed for the overlay to be positioned correctly */
             z-index: 0; /* Ensure overlay is above background but below content */
             color: #FFFFFF; /* Default text color for this section set to white */
         }
-
         /* Overlay for readability */
         #value::before {
             content: '';
@@ -161,43 +149,37 @@
             background: rgba(0, 0, 0, 0.35); /* Dark semi-transparent overlay */
             z-index: 1; /* Puts overlay above background image */
         }
-
         /* Ensure content is above the overlay */
         #value .max-w-7xl {
             position: relative;
             z-index: 2; /* Puts content above the overlay */
         }
-
         /* Adjust elements within the #value section for contrast */
         #value h2,
         #value .text-[#40E0D0], /* Your vibrant turquoise color */
         #value .text-xl { /* Title for the feature boxes */
             color: #FFFFFF; /* Force text to white for readability */
         }
-
         /* Paragraph text within #value boxes */
         #value .bg-gray-50 p {
              color: #FFFFFF; /* Ensure text in feature boxes is white */
         }
-
         #value .bg-gray-50 {
             background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for feature boxes */
             backdrop-filter: blur(10px); /* Optional: Frosted glass effect */
             border-color: #40E0D0; /* Keep the border color */
         }
-        
         /* --- STYLES for #product section background image --- */
         #product {
             background-image: url('webimages/furnaceimage.png'); /* Placeholder, replace with your image */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Optional: for parallax effect */
-			min-height: 100vh;
+            min-height: 100vh;
             position: relative;
             z-index: 0;
             color: #FFFFFF; /* Default text color for this section */
         }
-
         #product::before {
             content: '';
             position: absolute;
@@ -208,13 +190,11 @@
             background: rgba(0, 0, 0, 0.7); /* Darker overlay for strong contrast */
             z-index: 1;
         }
-
         #product .max-w-7xl,
         #product .bg-white { /* Target the main content container and the table/div backgrounds */
             position: relative;
             z-index: 2; /* Ensure content is above the overlay */
         }
-
         /* Adjust text colors within #product for readability against the dark overlay */
         #product h2,
         #product h3,
@@ -224,12 +204,10 @@
         #product p {
             color: #FFFFFF; /* Force text to white */
         }
-
         #product table thead {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent turquoise for table header */
-            color: #004c4c; /* Dark text on turquoise */
+            color: #FFFFFF; /* Changed text to white for better contrast on black */
         }
-
         #product table tbody {
             background-color: rgba(255, 255, 255, 0.1); /* Transparent white for table body */
         }
@@ -239,17 +217,34 @@
         #product table tbody tr:last-child {
             border-bottom: none;
         }
-        /* Specific class for bold values in table - no !important needed if rule is specific enough */
-        #product table td.text-[#008080] { 
+        /* Specific class for bold values in table */
+        #product table td.text-[#008080] {
             color: #40E0D0; /* Keep your vibrant turquoise for key values */
         }
-
+         #product table td.text-black { /* Ensure black text in table is also white */
+             color: #FFFFFF;
+         }
         /* For the info box below the table */
         #product .shadow-inner {
             background-color: rgba(255, 255, 255, 0.15); /* Transparent background for info box */
             border-color: rgba(64, 224, 208, 0.5); /* Lighter border for info box */
             backdrop-filter: blur(3px); /* Optional: Frosted glass effect for info box */
         }
+
+        /* --- START: Google Form iframe responsive height --- */
+        .google-form-iframe {
+            height: 900px; /* Default height for larger screens */
+            width: 100%; /* Ensure it takes full width */
+            border: none; /* Remove default iframe border */
+        }
+
+        @media (max-width: 767px) { /* For screens smaller than 768px (Tailwind 'md') */
+            .google-form-iframe {
+                height: 750px; /* Adjust this shorter height for mobile */
+            }
+        }
+        /* --- END: Google Form iframe responsive height --- */
+
     </style>
 </head>
 <body class="text-gray-800">
@@ -288,263 +283,211 @@
     </ul>
 </nav>
 
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <a href="#hero" class="flex items-center space-x-3">
+            <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#008080" />
+                <g fill="none" stroke-width="4">
+                    <path d="M 50 10 L 85 30 L 85 70 L 50 90 L 15 70 L 15 30 Z" stroke="#40E0D0" class="stroke-current" />
+                    <path d="M 50 25 L 70 37 L 70 63 L 50 75 L 30 63 L 30 37 Z" stroke="#A0AEC0" class="stroke-current" />
+                </g>
+                </svg>
+            <span class="text-2xl font-extrabold text-[#008080]">EliteNT</span>
+        </a>
+        <nav class="space-x-4 hidden md:flex items-center">
+            <a href="#value" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Advantages</a>
+            <a href="#product" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Products</a>
+            <a href="#applications" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Applications</a>
+            <a href="#team" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Team</a>
+            <a href="#quote" class="btn-primary transition-all duration-300 transform hover:scale-105">Request Quote</a>
+        </nav>
+    </div>
+</header>
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#hero" class="flex items-center space-x-3">
-                <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="48" fill="#008080" />
-                    <g fill="none" stroke-width="4">
-                        <path d="M 50 10 L 85 30 L 85 70 L 50 90 L 15 70 L 15 30 Z" stroke="#40E0D0" class="stroke-current" />
-                        <path d="M 50 25 L 70 37 L 70 63 L 50 75 L 30 63 L 30 37 Z" stroke="#A0AEC0" class="stroke-current" />
-                    </g>
-                    </svg>
-                <span class="text-2xl font-extrabold text-[#008080]">EliteNT</span>
-            </a>
-            <nav class="space-x-4 hidden md:flex items-center">
-                <a href="#value" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Advantages</a>
-                <a href="#product" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Products</a>
-                <a href="#applications" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Applications</a>
-                <a href="#team" class="text-gray-600 hover:text-[#008080] font-medium transition translate-y-[1px]">Team</a>
-                <a href="#quote" class="btn-primary transition-all duration-300 transform hover:scale-105">Request Quote</a>
-            </nav>
-        </div>
-    </header>
+<section id="hero" class="section-padding flex items-center min-h-screen relative overflow-hidden">
+    <div class="max-w-7xl hero-content z-10 px-4 sm:px-6 lg:px-8"> <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
+            EliteNT
+        </h1>
+        <p class="text-2xl text-white mb-4"> Leading manufacturers and researchers of Carbon Nanotube textiles
+        </p>
+        <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 text-white">
+            <span class="text-[#40E0D0]">Join the Material Revolution</span>
+        </h2>
+        <a href="#quote" class="btn-primary shadow-lg shadow-[#40E0D0]/50">
+            Request Technical Specification & Quote
+        </a>
+    </div>
+</section>
 
-    <section id="hero" class="section-padding flex items-center min-h-screen relative overflow-hidden">
-        <div class="max-w-7xl hero-content z-10">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-white">
-                EliteNT
-            </h1>
-            
-            <p class="text-2xl text-white mb-4">
-                Leading manufacturers and researchers of Carbon Nanotube textiles
-            </p>
-            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 text-white">
-                <span class="text-[#40E0D0]">Join the Material Revolution</span>
-            </h2>
-            <a href="#quote" class="btn-primary shadow-lg shadow-[#40E0D0]/50">
-                Request Technical Specification & Quote
-            </a>
-        </div>
-    </section>
-
-    <section id="value" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">Superiority through excellence</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-            
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <div class="text-3xl text-[#40E0D0] font-extrabold">Ultra-Long CNTs</div>
-                    <h3 class="text-xl font-semibold">High-quality CNT mats, fibres and pulp</h3>
-                    <p class="text-white text-sm">Our Single (G/D - 50) and Multi-Walled (G/D - 10) CNTs are > 100µm in length reducing flaking and deposits.</p>
-                    <p class="text-white text-sm">The crystalline quality and length result in supreme conductivity and strength in our textiles. Furthermore, the length of our CNTs makes them instrinsically safe.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <div class="text-3xl text-[#40E0D0] font-extrabold">Turquoise H2</div>
-                    <h3 class="text-xl font-semibold">Turquoise Hydrogen</h3>
-                    <p class="text-white text-sm">Our process pyrolyzes waste methane, co-producing clean, CO2 free hydrogen.</p>
-                    <p class="text-white text-sm">CNTs can reduce your Scope 3 emissions and achieve your sustainability goals.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <div class="text-3xl text-[#40E0D0] font-extrabold">Secure your supply</div>
-                    <h3 class="text-xl font-semibold">Scalable manufacturing for high performance CNTs</h3>
-                    <p class="text-white text-sm">Our patented process generates high volumes of high quality mats and fibres.</p>
-                    <p class="text-white text-sm">The process modularity and enigneering ingenuity results in a multi-tonne process, readily scaling to customer needs.</p>
-                </div>
+<section id="value" class="section-padding">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">Superiority through excellence</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <div class="text-3xl text-[#40E0D0] font-extrabold">Ultra-Long CNTs</div>
+                <h3 class="text-xl font-semibold text-white">High-quality CNT mats, fibres and pulp</h3> <p class="text-white text-sm">Our Single (G/D - 50) and Multi-Walled (G/D - 10) CNTs are > 100µm in length reducing flaking and deposits.</p>
+                <p class="text-white text-sm">The crystalline quality and length result in supreme conductivity and strength in our textiles. Furthermore, the length of our CNTs makes them instrinsically safe.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <div class="text-3xl text-[#40E0D0] font-extrabold">Turquoise H2</div>
+                <h3 class="text-xl font-semibold text-white">Turquoise Hydrogen</h3> <p class="text-white text-sm">Our process pyrolyzes waste methane, co-producing clean, CO2 free hydrogen.</p>
+                <p class="text-white text-sm">CNTs can reduce your Scope 3 emissions and achieve your sustainability goals.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <div class="text-3xl text-[#40E0D0] font-extrabold">Secure your supply</div>
+                <h3 class="text-xl font-semibold text-white">Scalable manufacturing for high performance CNTs</h3> <p class="text-white text-sm">Our patented process generates high volumes of high quality mats and fibres.</p>
+                <p class="text-white text-sm">The process modularity and enigneering ingenuity results in a multi-tonne process, readily scaling to customer needs.</p>
             </div>
         </div>
-    </section>
-    
-    <section id="product" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#008080] pb-2 max-w-xl mx-auto">Our process and material</h2>
-            
-            <div class="mt-12 p-6 text-left rounded-xl border-gray-200 pb-6 hover:bg-black">
-                <h3 class="text-xl font-bold text-[#008080] mb-3">Our story</h3>
-                <p class="text-white text-sm hover:bg-black">Starting in a small corner room of the University of Cambridge a breakthrough in CNT synthesis was borne. The achievement was reached 5 years ago. We began our mission to create high performance CNTs with tailored solutions. 
-                We strive is to give the world a carbon revolution and our customers the best CNT textiles to-date. Our teams unrivaled research ability means we provide produce by the multi-tonne, tailored to your applications needs. 
-                We pride ourselves on the high-quality of our material, giving you CNT materials that really will make a substaintial, beneficial difference.</p>
-            </div>
-            <div class="mt-12 bg-white p-6 text-left rounded-xl shadow-inner border-gray-200 pb-6">
-                <h3 class="text-xl font-bold text-[#008080] mb-3">Our materials</h3>
-                <div class="overflow-x-auto">
-				<table class="min-w-full divide-y divide-gray-200 rounded-xl">
+    </div>
+</section>
+
+<section id="product" class="section-padding">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#008080] pb-2 max-w-xl mx-auto">Our process and material</h2>
+        
+        <div class="mt-12 p-6 text-left rounded-xl border-gray-200 pb-6 shadow-inner"> <h3 class="text-xl font-bold text-[#40E0D0] mb-3">Our story</h3> <p class="text-white text-sm">Starting in a small corner room of the University of Cambridge a breakthrough in CNT synthesis was borne. The achievement was reached 5 years ago. We began our mission to create high performance CNTs with tailored solutions.
+            We strive is to give the world a carbon revolution and our customers the best CNT textiles to-date. Our teams unrivaled research ability means we provide produce by the multi-tonne, tailored to your applications needs.
+            We pride ourselves on the high-quality of our material, giving you CNT materials that really will make a substaintial, beneficial difference.</p>
+        </div>
+        <div class="mt-12 bg-white p-6 text-left rounded-xl shadow-inner border-gray-200 pb-6">
+            <h3 class="text-xl font-bold text-[#40E0D0] mb-3">Our materials</h3> <div class="overflow-x-auto table_wrapper"> <table class="min-w-full divide-y divide-gray-200 rounded-xl">
                     <thead class="bg-black text-white">
                         <tr>
                             <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Product Type</th>
                             <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Crystalinity (G/D)</th>
-							<th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Metal content (%)</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Metal content (%)</th>
                             <th class="px-6 py-3 text-left text-sm font-semibold tracking-wider">Observed Benefits</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
-                        <tr class="hover:bg-black">
-                            <td class="px-6 py-4 font-semibold">RMW-1</td>
-                            <td class="px-6 py-4 text-[#008080] font-bold">10</td>
-                            <td class="px-6 py-4 text-[#008080] font-bold">5-10</td>
-							<td class="px-6 py-4 text-sm">High carbon contents provides easily integratable material as well as an enhanced performance. Standard research grade material, available in sample sizes: 1-10g. If your application requires lower metal contents, contact us.</td>
+                        <tr class="hover:bg-gray-700"> <td class="px-6 py-4 font-semibold">RMW-1</td>
+                            <td class="px-6 py-4 text-[#40E0D0] font-bold">10</td> <td class="px-6 py-4 text-[#40E0D0] font-bold">5-10</td> <td class="px-6 py-4 text-sm">High carbon contents provides easily integratable material as well as an enhanced performance. Standard research grade material, available in sample sizes: 1-10g. If your application requires lower metal contents, contact us.</td>
                         </tr>
-                        <tr class="hover:bg-black">
-                            <td class="px-6 py-4 font-semibold">MPF-MW1</td>
-                            <td class="px-6 py-4 text-black font-bold">6-8</td>
-                            <td class="px-6 py-4 text-black font-bold">10-20</td>
-							<td class="px-6 py-4 text-sm">The CNTs from MPF1 are highly crystalline with improved dispersibility. The combination of length and crystallinity provides a unique blend to creating strong fibres and mats. Available in 10's of kg</td>
+                        <tr class="hover:bg-gray-700"> <td class="px-6 py-4 font-semibold">MPF-MW1</td>
+                            <td class="px-6 py-4 text-white font-bold">6-8</td> <td class="px-6 py-4 text-white font-bold">10-20</td> <td class="px-6 py-4 text-sm">The CNTs from MPF1 are highly crystalline with improved dispersibility. The combination of length and crystallinity provides a unique blend to creating strong fibres and mats. Available in 10's of kg</td>
                         </tr>
-                        <tr class="hover:bg-black">
-                            <td class="px-6 py-4 font-semibold">RSW-1</td>
-                            <td class="px-6 py-4 text-[#008080] font-bold">35-60</td>
-							<td class="px-6 py-4 text-black font-bold">10-15</td>
-                            <td class="px-6 py-4 text-sm">Our single-walled CNTs have an extremely high aspect ratio. They offer improvement in their tensile strength. They offer other benefits such as dispersibility in different media. Available in 1-10g, longer lead time than RMW-1.</td>
+                        <tr class="hover:bg-gray-700"> <td class="px-6 py-4 font-semibold">RSW-1</td>
+                            <td class="px-6 py-4 text-[#40E0D0] font-bold">35-60</td> <td class="px-6 py-4 text-white font-bold">10-15</td> <td class="px-6 py-4 text-sm">Our single-walled CNTs have an extremely high aspect ratio. They offer improvement in their tensile strength. They offer other benefits such as dispersibility in different media. Available in 1-10g, longer lead time than RMW-1.</td>
                         </tr>
                     </tbody>
                 </table>
-				</div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="applications" class="section-padding bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">Applications</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
-                        Batteries
-                    </h3>
-                    <p class="text-gray-600">Batteries are now oppurtunity space for the use of our pulp and sheets. Similar materials are being integrated as dopants within upcoming Li-ion battery technologies. We now offer CNT sheets and pulp for multiple substitutable battery components.</p>
-                    <ul class="list-disc list-inside text-sm text-gray-700">
-                        <li>Stabilizes Silicon Anodes improving performance by x 10.</li>
-                        <li>Improves Charge/Discharge Rates.</li>
-                        <li>Reduces thermal runaway risk through superior heat dissipation.</li>
-						<li>Increases battery efficiency and drive range through weight reduction.</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
-                        Disperions
-                    </h3>
-                    <p class="text-gray-600">We offer organic and water-based CNT dispersions as an additive to your market needs. These have critical applications ranging from improving corrosion resistance in mairitime components to thin-film paints for electrical conductive sheets. They integrate well in polymers and can be used to enhance electrical conductivity.</p>
-                    <ul class="list-disc list-inside text-sm text-gray-700">
-                        <li>Enhance electrical discharge in polymers.</li>
-                        <li>Improves corrosion resistance whilst enhancing conductivity of the paints in maritime applications.</li>
-                        <li>Provides a netowrk for thin-film applications.</li>
-						<li>Enhances thermal conductivity of ceramics and other possible high-temperature applications.</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
-                    <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
-                        Aerospace Composites
-                    </h3>
-                    <p class="text-gray-600">The quality of our CNTs is essential for lightweight composite structures and EMI shielding in high-altitude/vacuum environments, where material integrity is of utmost importance.</p>
-                    <ul class="list-disc list-inside text-sm text-gray-700">
-                        <li>Eliminates particulate shedding/contamination risk across several critial components.</li>
-                        <li>9x weight reduction over traditional copper based products.</li>
-                        <li>Superior mechanical strength and thermal transfer in critical airframes.</li>
-						<li> Operate in high stress environments in extreme radiation and vacuums.</li>
-                    </ul>
-                </div>
             </div>
         </div>
-    </section>   
-    <section id="ticker" class="py-12 bg-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl font-bold text-center mb-6 text-[#008080]">Our Partners</h2>
+    </div>
+</section>
 
-            <div class="marquee-container border-y-2 border-gray-300 bg-white">
-                <div class="marquee-content">
-                    
-                    <div class="image-set p-3">
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/Dexmat.png" alt="DEXMAT logo"
-                                
-                            >
-                        </div>
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/Kafritgrp.png" alt="Kafrit Group logo"
-                                
-                            >
-                        </div>
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/uoclogo.png" alt="University of Cambridge logo"
-                                
-                            >
-                        </div>
-                    </div>
+<section id="applications" class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#40E0D0] pb-2 max-w-lg mx-auto">Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
+                    Batteries
+                </h3>
+                <p class="text-gray-600">Batteries are now oppurtunity space for the use of our pulp and sheets. Similar materials are being integrated as dopants within upcoming Li-ion battery technologies. We now offer CNT sheets and pulp for multiple substitutable battery components.</p>
+                <ul class="list-disc list-inside text-sm text-gray-700">
+                    <li>Stabilizes Silicon Anodes improving performance by x 10.</li>
+                    <li>Improves Charge/Discharge Rates.</li>
+                    <li>Reduces thermal runaway risk through superior heat dissipation.</li>
+                    <li>Increases battery efficiency and drive range through weight reduction.</li>
+                </ul>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
+                    Dispersions </h3>
+                <p class="text-gray-600">We offer organic and water-based CNT dispersions as an additive to your market needs. These have critical applications ranging from improving corrosion resistance in mairitime components to thin-film paints for electrical conductive sheets. They integrate well in polymers and can be used to enhance electrical conductivity.</p>
+                <ul class="list-disc list-inside text-sm text-gray-700">
+                    <li>Enhance electrical discharge in polymers.</li>
+                    <li>Improves corrosion resistance whilst enhancing conductivity of the paints in maritime applications.</li>
+                    <li>Provides a network for thin-film applications.</li> <li>Enhances thermal conductivity of ceramics and other possible high-temperature applications.</li>
+                </ul>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-[#008080] space-y-3">
+                <h3 class="text-2xl font-semibold text-[#008080] flex items-center space-x-2">
+                    Aerospace Composites
+                </h3>
+                <p class="text-gray-600">The quality of our CNTs is essential for lightweight composite structures and EMI shielding in high-altitude/vacuum environments, where material integrity is of utmost importance.</p>
+                <ul class="list-disc list-inside text-sm text-gray-700">
+                    <li>Eliminates particulate shedding/contamination risk across several critical components.</li> <li>9x weight reduction over traditional copper based products.</li>
+                    <li>Superior mechanical strength and thermal transfer in critical airframes.</li>
+                    <li>Operate in high stress environments in extreme radiation and vacuums.</li> </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <div class="image-set p-3">
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/Dexmat.png" alt="DEXMAT logo"
-                                
-                            >
-                        </div>
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/Kafritgrp.png" alt="Kafrit Group logo"
-                                
-                            >
-                        </div>
-                        <div class="w-1/3 p-2 flex justify-center">
-                            <img 
-                                src="webimages/uoclogo.png" alt="University of Cambridge logo"
-                                
-                            >
-                        </div>
-                    </div>
-
+<section id="ticker" class="py-12 bg-gray-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6 text-[#008080]">Our Partners</h2>
+        <div class="marquee-container border-y-2 border-gray-300 bg-white">
+            <div class="marquee-content">
+                <div class="image-set p-3">
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="webimages/Dexmat_logo.png" alt="DEXMAT logo" class="h-20 object-contain"> </div>
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="partner_logos/Kafritgrp_logo.png" alt="Kafrit Group logo" class="h-20 object-contain"> </div>
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="partner_logos/university-of-cambridge-logo-black-and-white.png" alt="University of Cambridge logo" class="h-20 object-contain"> </div>
+                </div>
+                <div class="image-set p-3">
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="webimages/Dexmat_logo.png" alt="DEXMAT logo" class="h-20 object-contain"> </div>
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="partner_logos/Kafritgrp_logo.png" alt="Kafrit Group logo" class="h-20 object-contain"> </div>
+                    <div class="w-1/3 p-2 flex justify-center">
+                        <img src="partner_logos/university-of-cambridge-logo-black-and-white.png" alt="University of Cambridge logo" class="h-20 object-contain"> </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section id="team" class="section-padding bg-gray-100">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 border-b-2 border-[#008080] pb-2 max-w-xs mx-auto">Meet the Team</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-12">EliteNT is powered by a core team of material scientists and chemical engineers dedicated to scalable, clean carbon technology.</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12"> <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Dr.G" alt="Dr. Michael Glerum">
-                    <h3 class="text-xl font-bold text-[#008080]">Dr. M. G.</h3>
-                    <p class="text-sm font-semibold text-gray-600 mb-2">Chief Executive Officer (CEO)</p>
-                    <p class="text-xs text-gray-500">Expert in floating catalyst chemical vapor deposition (FC-CVD) and ultra-long CNT synthesis.</p>
-                </div>
+    </div>
+</section>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Mr.P" alt="Mr. Sam Pick">
-                    <h3 class="text-xl font-bold text-[#008080]">Mr. S. P.</h3>
-                    <p class="text-sm font-semibold text-gray-600 mb-2">Chief Operations Officer (COO)</p>
-                    <p class="text-xs text-gray-500">Operational lead on pilot plant delivery.</p>
-                </div>
-               </div>
+<section id="team" class="section-padding bg-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4 border-b-2 border-[#008080] pb-2 max-w-xs mx-auto">Meet the Team</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-12">EliteNT is powered by a core team of material scientists and chemical engineers dedicated to scalable, clean carbon technology.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"> <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
+                <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Dr.G" alt="Dr. Michael Glerum">
+                <h3 class="text-xl font-bold text-[#008080]">Dr. M. G.</h3>
+                <p class="text-sm font-semibold text-gray-600 mb-2">Chief Executive Officer (CEO)</p>
+                <p class="text-xs text-gray-500">Expert in floating catalyst chemical vapor deposition (FC-CVD) and ultra-long CNT synthesis.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#40E0D0] transition hover:shadow-2xl">
+                <img class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#008080]" src="https://placehold.co/100x100/A0AEC0/FFFFFF?text=Mr.P" alt="Mr. Sam Pick">
+                <h3 class="text-xl font-bold text-[#008080]">Mr. S. P.</h3>
+                <p class="text-sm font-semibold text-gray-600 mb-2">Chief Operations Officer (COO)</p>
+                <p class="text-xs text-gray-500">Operational lead on pilot plant delivery.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="quote" class="section-padding bg-[#004c4c] text-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 text-[#40E0D0]">Ready to Integrate EliteNT?</h2>
-            <p class="text-center text-gray-200 mb-10">Connect directly with our engineering team for custom material grades, volume pricing, and supply assurance.</p>
+<section id="quote" class="section-padding bg-[#004c4c] text-white">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-4 text-[#40E0D0]">Ready to Integrate EliteNT?</h2>
+        <p class="text-center text-gray-200 mb-10">Connect directly with our engineering team for custom material grades, volume pricing, and supply assurance.</p>
 
-            <div class="bg-white p-2 rounded-xl shadow-turquoise text-gray-800">
-				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2gWU0Ofh7sLM6ITsqJcyWy-AJIJSe9v5ew7emLglpifbqCg/viewform?embedded=true" 
-						frameborder="0" 
-						marginheight="0" 
-						marginwidth="0">Loading…
-				</iframe>
-			</div>
+        <div class="bg-white p-2 rounded-xl shadow-turquoise text-gray-800">
+            <iframe
+                class="google-form-iframe" /* Added class */
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc2gWU0Ofh7sLM6ITsqJcyWy-AJIJSe9v5ew7emLglpifbqCg/viewform?embedded=true"
+                width="100%"
+                height="100%" /* Kept as 100% for CSS control */
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">Loading…
+            </iframe>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="bg-gray-800 text-white p-6">
-        <div class="max-w-7xl mx-auto text-center text-sm">
-            &copy; 2025 EliteNT Advanced Materials. All Rights Reserved.
-        </div>
-    </footer>
+<footer class="bg-gray-800 text-white p-6">
+    <div class="max-w-7xl mx-auto text-center text-sm">
+        &copy; 2025 EliteNT Advanced Materials. All Rights Reserved. | <a href="#" class="text-[#40E0D0] hover:underline">Technical Support</a> | <a href="#" class="text-[#40E0D0] hover:underline">Patents & IP</a>
+    </div>
+</footer>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Get all the sections that have an ID
@@ -562,14 +505,14 @@
 
                     // Remove 'active' from all dots
                     navDots.forEach(dot => dot.classList.remove('active'));
-                    
+
                     // Add 'active' to the current dot
                     if (activeDot) {
                         activeDot.classList.add('active');
                     }
                 }
             });
-        }, { 
+        }, {
             rootMargin: '-50% 0px -50% 0px' // Triggers when the section is in the middle 50% of the screen
         });
 
@@ -584,7 +527,7 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     // Use smooth scroll behavior
                     window.scrollTo({
@@ -599,5 +542,3 @@
 
 </body>
 </html>
-
-
